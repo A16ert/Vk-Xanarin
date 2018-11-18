@@ -16,5 +16,17 @@ namespace VkXamarinApp.Views
 		{
 			InitializeComponent ();
 		}
+
+        private void Registration_Clicked(object sender, EventArgs e)
+        {
+            OpenRegistrationPage();
+        }
+
+        private void SkipAuth_Clicked(object sender, EventArgs e) => App.GoToRoot();
+
+
+
+
+        private async void OpenRegistrationPage() => await Navigation.PushAsync(new RegistrationPage());
 	}
 }

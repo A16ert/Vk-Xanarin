@@ -1,10 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VkXamarinApp.App">
 	<Application.Resources>
 		<ResourceDictionary>
             <!--Global Styles-->
+            <Style TargetType="Button" x:Key="buttonWithBorders">
+                <Setter Property="CornerRadius" Value="12"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BorderWidth" Value="1"/>
+            </Style>
+            <Color x:Key="BackgroundGray">#efeff4</Color>
+            <Color x:Key="FontGray">#5c5c5c</Color>
             <Color x:Key="NavigationPrimary">#2196F3</Color>
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />

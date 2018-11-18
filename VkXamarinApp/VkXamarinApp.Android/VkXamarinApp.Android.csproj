@@ -59,6 +59,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderer\UnderlineLabelRender.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -89,10 +90,11 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Renderer\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VkXamarinApp\VkXamarinApp.csproj">
-      <Project>{7C8E068B-E73D-475E-9840-4B124FAB397E}</Project>
+      <Project>{94CAEA4A-992A-43C1-9F02-E399ABB471DC}</Project>
       <Name>VkXamarinApp</Name>
     </ProjectReference>
   </ItemGroup>

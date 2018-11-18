@@ -1,17 +1,80 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:VkXamarinApp.ViewModels"
+             xmlns:controls="clr-namespace:VkXamarinApp.Views.Controls"
              x:Class="VkXamarinApp.Views.AuthPage"
              Title="Авторизация">
     <ContentPage.BindingContext>
         <vm:AuthViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="620*"/>
+                <RowDefinition Height="585*"/>
+            </Grid.RowDefinitions>
+            <!--войти-->
+            <Grid x:Name="authGrid" Margin="0,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="180*"/>
+                    <RowDefinition Height="126*"/>
+                    <RowDefinition Height="118*"/>
+                    <RowDefinition Height="182*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" BackgroundColor="White">
+                    <Grid.Resources>
+                        <Style TargetType="{x:Type Entry}">
+                            <Setter Property="BackgroundColor" Value="White"/>
+                            <Setter Property="TextColor" Value="Black"/>
+                            <Setter Property="Margin" Value="0,0,16,0"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Entry Grid.Row="0" Placeholder="Телефон"
+                                              Text="{Binding PhoneNumber}"/>
+                    <Entry Grid.Row="1" Placeholder="Код подтверждения"
+                                              Text="{Binding Code}"/>
+                </Grid>
+
+
+                <Button Grid.Row="2"
+                        Style="{StaticResource buttonWithBorders}"
+                        Text="Войти"
+                        Command="{Binding EnterCommand}"
+                        Margin="16, 0"/>
+            </Grid>
+
+            <!--регистрация-->
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="85*"/>
+                    <RowDefinition Height="109*"/>
+                    <RowDefinition Height="115*"/>
+                    <RowDefinition Height="278*"/>
+                </Grid.RowDefinitions>
+                <Grid VerticalOptions="EndAndExpand" >
+                    <controls:UnderlineLabel Text="Регистрация" HorizontalOptions="Center" VerticalOptions="EndAndExpand" 
+                                               TextColor="Black" FontFamily="{StaticResource SFUIText-Medium}"/>
+                    <Button Clicked="Registration_Clicked" BorderColor="Transparent" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="EndAndExpand" />
+                </Grid>
+                <Button Text="Пропустить" TextColor="#535353"
+                        BackgroundColor="#999999" BorderColor="#999999" 
+                        Margin="16, 0"
+                        Clicked="SkipAuth_Clicked" 
+                        BorderRadius="12"
+                        Grid.Row="2"/>
+                <Label HorizontalTextAlignment="Center"
+                       Margin="16,19,16,15"
+                       Text="Если вы продолжите без регистрации,то не сможете идентифицироваться в один клик в магазинах, зарегистрированных в SimleCount, а также невозможно будет восстановить ваши дисконтные карты после удаления приложения или смены устройства"
+                       Grid.Row="3">
+                </Label>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

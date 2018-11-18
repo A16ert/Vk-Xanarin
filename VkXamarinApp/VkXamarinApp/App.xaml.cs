@@ -8,19 +8,21 @@ namespace VkXamarinApp
 {
 	public partial class App : Application
 	{
+
+        public static Application CurrentApp { get; private set; }
 		
 		public App ()
 		{
 			InitializeComponent();
 
-
+            CurrentApp = this;
             MainPage = new NavigationPage(new AuthPage());
 
 		}
 
-        public void GoToRoot()
+        public static void GoToRoot()
         {
-            MainPage = new MainPage();
+            CurrentApp.MainPage = new MainPage();
         }
 
 		protected override void OnStart ()
