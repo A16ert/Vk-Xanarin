@@ -14,8 +14,14 @@ namespace VkXamarinApp
 			InitializeComponent();
 
 
-			MainPage = new MainPage();
+            MainPage = new NavigationPage(new AuthPage());
+
 		}
+
+        public void GoToRoot()
+        {
+            MainPage = new MainPage();
+        }
 
 		protected override void OnStart ()
 		{
