@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace VkXamarinApp.ViewModels
 {
-    class AuthVIewModel : BaseViewModel
+    class AuthViewModel : BaseViewModel
     {
         
     }
