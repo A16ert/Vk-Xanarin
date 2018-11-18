@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:VkXamarinApp.ViewModels"
-             xmlns:controls="clr-namespace:VkXamarinApp.Views.Controls"
              x:Class="VkXamarinApp.Views.AuthPage"
              Title="Авторизация">
     <ContentPage.BindingContext>
@@ -59,9 +58,10 @@
                     <RowDefinition Height="278*"/>
                 </Grid.RowDefinitions>
                 <Grid VerticalOptions="EndAndExpand" >
-                    <controls:UnderlineLabel Text="Регистрация" HorizontalOptions="Center" VerticalOptions="EndAndExpand" 
-                                               TextColor="Black" FontFamily="{StaticResource SFUIText-Medium}"/>
-                    <Button Clicked="Registration_Clicked" BorderColor="Transparent" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="EndAndExpand" />
+                    <Label Text="Регистрация" HorizontalOptions="Center" VerticalOptions="EndAndExpand" 
+                                               TextColor="Black"/>
+                    <Button Clicked="Registration_Clicked" BorderColor="Transparent" BackgroundColor="Transparent"
+                            HorizontalOptions="Center" VerticalOptions="EndAndExpand" />
                 </Grid>
                 <Button Text="Пропустить" TextColor="#535353"
                         BackgroundColor="#999999" BorderColor="#999999" 
@@ -71,7 +71,7 @@
                         Grid.Row="2"/>
                 <Label HorizontalTextAlignment="Center"
                        Margin="16,19,16,15"
-                       Text="Если вы продолжите без регистрации,то не сможете идентифицироваться в один клик в магазинах, зарегистрированных в SimleCount, а также невозможно будет восстановить ваши дисконтные карты после удаления приложения или смены устройства"
+                       Text="Если вы продолжите без регистрации,то "
                        Grid.Row="3">
                 </Label>
             </Grid>

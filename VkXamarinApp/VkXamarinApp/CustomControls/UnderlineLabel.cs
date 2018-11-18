@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace VkXamarinApp.Views.Controls
+namespace VkXamarinApp.CustomControls
 {
     public class UnderlineLabel : Label
     {

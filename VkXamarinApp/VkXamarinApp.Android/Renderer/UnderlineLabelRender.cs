@@ -5,7 +5,7 @@ using Android.Widget;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using VkXamarinApp.Droid.Renderer;
-using VkXamarinApp.Views.Controls;
+using VkXamarinApp.CustomControls;
 
 [assembly: ExportRenderer(typeof(UnderlineLabel), typeof(UnderlineLabelRender))]
 namespace VkXamarinApp.Droid.Renderer
