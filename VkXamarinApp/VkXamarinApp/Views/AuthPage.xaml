@@ -28,9 +28,9 @@
             </StackLayout>
             <StackLayout VerticalOptions="EndAndExpand" Margin="0, 0, 0, 20">
                 <Button CornerRadius="12"
-                        BackgroundColor="Green"
+                        BackgroundColor="{StaticResource NavigationPrimary}"
                         Text="Войти"
-                        Command="{Binding EnterCommand}"
+                        Command="{Binding AuthCommand}"
                         Margin="16, 0"/>
                 <Button CornerRadius="12"
                         BackgroundColor="Gray"

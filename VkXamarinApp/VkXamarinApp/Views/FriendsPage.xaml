@@ -1,14 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VkXamarinApp.Views.FriendsPage"
              xmlns:vm="clr-namespace:VkXamarinApp.ViewModels"
+             x:Name="friendsPage"
              Title="Друзья">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="ADD" Clicked="Handle_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <vm:FriendsViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ListView x:Name="friendsList" ItemsSource="{Binding FriendsList}"
+                  ItemSelected="Handle_ItemSelected"
+                  RowHeight="60">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="просто так" />
+                            <MenuItem Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference friendsPage}}"
+                                      CommandParameter="{Binding}"
+                                      Text="удалить" />
+                         </ViewCell.ContextActions>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" Margin="5, 0">
+                                <StackLayout Orientation="Horizontal" Margin="0, 5, 0, 0">
+                                    <Label Text="{Binding Name}" TextColor="Black" Margin="0, 0, 1, 0" FontAttributes="Bold"/>
+                                    <Label Text="{Binding LastName}" TextColor="Black" FontAttributes="Bold"/>
+                                </StackLayout>
+                               <Label Text="{Binding Phone}" Margin="0, 5"/>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>

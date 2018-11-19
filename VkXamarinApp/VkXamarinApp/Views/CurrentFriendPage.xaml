@@ -1,13 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:VkXamarinApp.ViewModels"
-             x:Class="VkXamarinApp.Views.CurrentFriendPage">
+             x:Class="VkXamarinApp.Views.CurrentFriendPage"
+             Title="Добавление друга">
+    <ContentPage.BindingContext>
+        <vm:CurrentFriendViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="10">
+            <Entry Placeholder="имя" Text="{Binding Name, Mode=TwoWay}"/>
+            <Entry Placeholder="фамилия" Text="{Binding LastName, Mode=TwoWay}"/>
+            <Entry Placeholder="номер телефона" Text="{Binding Phone, Mode=TwoWay}"/>
+            
+            <Button Text="добавить" HorizontalOptions="End" Command="{Binding AddFriendCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

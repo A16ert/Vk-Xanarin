@@ -29,4 +29,13 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="utils\" />
+    <Folder Include="utils\Repository\" />
+    <Folder Include="utils\Repository\Models\" />
+    <Folder Include="Services\Friends\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="utils\Repository\FriendModel.cs" />
+  </ItemGroup>
 </Project>

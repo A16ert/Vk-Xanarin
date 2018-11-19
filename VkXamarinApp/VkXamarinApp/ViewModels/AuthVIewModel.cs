@@ -55,7 +55,11 @@ namespace VkXamarinApp.ViewModels
                 return;
             }
 
-            App.GoToRoot();
+            if (_authSerivce.Auth(phoneNumber, Code))
+            {
+                App.GoToRoot();
+            }
+            else _toast.LongAlert("Пароль или телефон были введены не правильно, попробуйте ещё раз");
         }
     }
 }
